@@ -1,0 +1,28 @@
+@theme {
+  --font-satoshi: "Satoshi", "sans-serif";
+  --font-integral: "Inregral CF", "sans-serif";
+
+  --text-tiny: 0.625rem;
+
+  --color-accent-gray: #f0f0f0;
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@layer base {
+  body {
+    @apply font-satoshi;
+    @apply h-screen;
+  }
+
+  #root {
+    @apply h-full;
+  }
+}
+
+.bg-custom {
+  background-image: url("../assets/img/preview.png");
+}
