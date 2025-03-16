@@ -1,13 +1,13 @@
+import type { Swiper as SwiperType } from "swiper";
 import React, { useRef } from "react";
-import { Title } from "../../../components/ui/Title";
-import { classNames } from "../../../utils/classNames";
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Swiper as SwiperType } from "swiper";
-import { Rating } from "../../../components/shared/Rating";
 import { Navigation } from "swiper/modules";
-
+import { Swiper, SwiperSlide } from "swiper/react";
 import ArrowSvg from "../../../assets/icons/arrow.svg";
 import OkSvg from "../../../assets/icons/ok.svg";
+import { Rating } from "../../../components/shared/Rating";
+
+import { Title } from "../../../components/ui/Title";
+import { classNames } from "../../../utils/classNames";
 
 interface ReviewsProps {
   className?: string;
@@ -96,9 +96,9 @@ export const Reviews: React.FC<ReviewsProps> = ({ className }) => {
             onBeforeInit={(swiper) => {
               swiperRef.current = swiper;
             }}
-            loop={true}
+            loop
             slidesPerView={1}
-            watchSlidesProgress={true}
+            watchSlidesProgress
             spaceBetween={16}
             a11y={{ prevSlideMessage: "Previous slide", nextSlideMessage: "Next slide" }}
             breakpoints={{
@@ -109,7 +109,7 @@ export const Reviews: React.FC<ReviewsProps> = ({ className }) => {
               },
             }}
           >
-            {REVIEWS.map((item) => (
+            {REVIEWS.map(item => (
               <SwiperSlide
                 key={item.id}
                 className="p-6 mt-6 border border-black/10 rounded-xl h-[190px]! xl:h-[240px]! [&:not(.swiper-slide-visible)]:blur-[2px]"
@@ -117,22 +117,22 @@ export const Reviews: React.FC<ReviewsProps> = ({ className }) => {
                 <Rating rating={item.rating} total={false} />
                 <div className="mt-3 flex items-center justify-start  gap-x-1">
                   <div className="font-bold text-base xl:text-xl leading-1.5">
-                    {item.firstName + " " + item.lastName.slice(0, 1).toUpperCase() + "."}
+                    {`${item.firstName} ${item.lastName.slice(0, 1).toUpperCase()}.`}
                   </div>
                   <div>{item.verified && <img src={OkSvg} alt="Ok Icon" className="h-5 w-5" />}</div>
                 </div>
                 <p className="mt-2 leading-[20px] text-sm xl:text-base opacity-60">
-                  {item.review.length > 170 ? item.review.slice(0, 167) + "..." : item.review}
+                  {item.review.length > 170 ? `${item.review.slice(0, 167)}...` : item.review}
                 </p>
               </SwiperSlide>
             ))}
           </Swiper>
 
           <div className="flex justify-center items-center gap-x-4 absolute right-0 -top-6">
-            <button onClick={() => swiperRef.current?.slidePrev()}>
+            <button type="button" onClick={() => swiperRef.current?.slidePrev()}>
               <img src={ArrowSvg} alt="Right Arrow Icon" className="w-6 h-6 hover:opacity-60 transition-opacity" />
             </button>
-            <button onClick={() => swiperRef.current?.slideNext()}>
+            <button type="button" onClick={() => swiperRef.current?.slideNext()}>
               <img
                 src={ArrowSvg}
                 alt="Left Arrow Icon"

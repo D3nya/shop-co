@@ -1,9 +1,9 @@
 import React, { useRef, useState } from "react";
+import EmailSvg from "../../../../assets/icons/email.svg";
 import { classNames } from "../../../../utils/classNames";
-import { Input } from "../../../ui/Input";
 import { Button } from "../../../ui/Button";
 
-import EmailSvg from "../../../../assets/icons/email.svg";
+import { Input } from "../../../ui/Input";
 
 interface UpToDateProps {
   className?: string;
@@ -24,7 +24,6 @@ export const UpToDate: React.FC<UpToDateProps> = ({ className }) => {
 
   const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    console.log(emailValue);
   };
 
   return (

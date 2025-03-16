@@ -1,17 +1,17 @@
 import React from "react";
-import { UpToDate } from "./components/UpToDate";
 import { Link as RouterLink } from "react-router";
-
-import { TwitterSvg } from "./components/svgs/TwitterSvg";
-import { FacebookSvg } from "./components/svgs/FacebookSvg";
-import { InstagramSvg } from "./components/svgs/InstagramSvg";
-import { GithubSvg } from "./components/svgs/GithubSvg";
-
 import ApplePaySvg from "../../../assets/icons/payments/apple-pay.svg";
+
 import GPaySvg from "../../../assets/icons/payments/g-pay.svg";
 import MasterCardSvg from "../../../assets/icons/payments/mastercard.svg";
 import PayPalSvg from "../../../assets/icons/payments/paypal.svg";
 import VisaSvg from "../../../assets/icons/payments/visa.svg";
+
+import { FacebookSvg } from "./components/svgs/FacebookSvg";
+import { GithubSvg } from "./components/svgs/GithubSvg";
+import { InstagramSvg } from "./components/svgs/InstagramSvg";
+import { TwitterSvg } from "./components/svgs/TwitterSvg";
+import { UpToDate } from "./components/UpToDate";
 
 interface FooterProps {
   className?: string;
@@ -19,84 +19,100 @@ interface FooterProps {
 
 const LINKS = [
   {
+    id: 1,
     title: "Company",
     links: [
       {
+        id: 2,
         name: "About",
         ref: "/about",
       },
       {
+        id: 3,
         name: "Features",
         ref: "/features",
       },
       {
+        id: 4,
         name: "Works",
         ref: "/works",
       },
-      {
-        name: "Career",
-        ref: "/career",
-      },
+      { id: 5, name: "Career", ref: "/career" },
     ],
   },
   {
+    id: 6,
     title: "Help",
     links: [
       {
+        id: 7,
         name: "Customer Support",
         ref: "/support",
       },
       {
+        id: 8,
         name: "Delivery Details",
         ref: "/delivery",
       },
       {
+        id: 9,
         name: "Terms & Conditions",
         ref: "/terms",
       },
       {
+        id: 10,
         name: "Privacy Policy",
         ref: "/policy",
       },
     ],
   },
   {
+    id: 11,
     title: "FAQ",
     links: [
       {
+        id: 12,
         name: "Account",
         ref: "/account",
       },
       {
+        id: 13,
         name: "Manage Deliveries",
         ref: "/deliveries",
       },
       {
+        id: 14,
         name: "Orders",
         ref: "/orders",
       },
       {
+        id: 15,
         name: "Payment",
         ref: "/payment",
       },
     ],
   },
   {
+    id: 16,
     title: "Resources",
     links: [
       {
+        id: 17,
         name: "Free eBook",
         ref: "/ebook",
       },
       {
+        id: 18,
         name: "Development Tutorial",
         ref: "/development",
       },
       {
+        id: 19,
         name: "How to - Blog",
         ref: "/blog",
       },
       {
+        id: 20,
         name: "Youtube Playlist",
         ref: "/youtube",
       },
@@ -147,12 +163,12 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
             </div>
 
             <div className="grid grid-cols-2 xl:grid-cols-4 gap-10 mt-8 xl:mt-0">
-              {LINKS.map((item, index) => (
-                <div key={index}>
+              {LINKS.map(item => (
+                <div key={item.id}>
                   <h3 className="font-medium uppercase text-sm leading-1 tracking-[3px]">{item.title}</h3>
                   <ul className="mt-4">
-                    {item.links.map((item, index) => (
-                      <li key={index} className="last:pb-0 pb-4">
+                    {item.links.map(item => (
+                      <li key={item.id} className="last:pb-0 pb-4">
                         <RouterLink
                           to={item.ref}
                           className="opacity-60 text-sm leading-[16px] hover:opacity-100 transition-opacity"

@@ -1,15 +1,15 @@
 import React from "react";
-import { classNames } from "../../../utils/classNames";
-import { Title } from "../../../components/ui/Title";
-import { Rating } from "../../../components/shared/Rating";
 import { Link as RouterLink } from "react-router";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import Shirt from "../../../assets/img/selling/shirt.png";
-import TShirt from "../../../assets/img/selling/t-shirt.png";
-import Shorts from "../../../assets/img/selling/shorts.png";
 import Jeans from "../../../assets/img/selling/jeans.png";
+import Shirt from "../../../assets/img/selling/shirt.png";
+import Shorts from "../../../assets/img/selling/shorts.png";
+
+import TShirt from "../../../assets/img/selling/t-shirt.png";
+import { Rating } from "../../../components/shared/Rating";
 import { Link } from "../../../components/ui/Link";
+import { Title } from "../../../components/ui/Title";
+import { classNames } from "../../../utils/classNames";
 
 interface TopSellingProps {
   className?: string;
@@ -42,7 +42,7 @@ export const TopSelling: React.FC<TopSellingProps> = ({ className }) => {
               },
             }}
           >
-            {TOP_SELLING.map((item) => (
+            {TOP_SELLING.map(item => (
               <SwiperSlide key={item.id}>
                 <RouterLink to={`/item/${item.id}`} className="h-[200px] w-[200px] xl:h-[300px] xl:w-[300px]">
                   <img
@@ -61,18 +61,18 @@ export const TopSelling: React.FC<TopSellingProps> = ({ className }) => {
                   <div
                     className={classNames(
                       "text-xl xl:text-2xl font-bold",
-                      item.discount ? "opacity-40 line-through order-2" : ""
+                      item.discount ? "opacity-40 line-through order-2" : "",
                     )}
                   >
-                    {"$" + item.price}
+                    {`$${item.price}`}
                   </div>
                   {item.discount && (
                     <>
                       <div className="text-xl xl:text-2xl font-bold order-1">
-                        {"$" + (item.price * (1 - item.discount)).toFixed()}
+                        {`$${(item.price * (1 - item.discount)).toFixed()}`}
                       </div>
                       <div className="order-3 text-xs xl:text-sm font-medium text-red-500 px-2 py-1 bg-red-100 rounded-2xl">
-                        {"-" + (item.discount * 100).toFixed() + "%"}
+                        {`-${(item.discount * 100).toFixed()}%`}
                       </div>
                     </>
                   )}

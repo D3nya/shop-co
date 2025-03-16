@@ -1,13 +1,13 @@
-import { Route, Routes } from "react-router";
 import { lazy } from "react";
-import userRoutes from "./userRoutes/userRoutes";
-import pageRoutes from "./pageRoutes/pageRoutes";
+import { Route, Routes } from "react-router";
 import { MainLayout } from "../layouts/MainLayout";
+import pageRoutes from "./pageRoutes/pageRoutes";
+import userRoutes from "./userRoutes/userRoutes";
 
 const HomePage = lazy(() => import("../pages/Home"));
 const NotFoundPage = lazy(() => import("../pages/NotFound"));
 
-const AppRouter = () => {
+function AppRouter() {
   return (
     <Routes>
       <Route element={<MainLayout />}>
@@ -18,6 +18,6 @@ const AppRouter = () => {
       </Route>
     </Routes>
   );
-};
+}
 
 export default AppRouter;

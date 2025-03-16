@@ -1,15 +1,15 @@
 import React from "react";
-import { classNames } from "../../../utils/classNames";
-import { Title } from "../../../components/ui/Title";
-import { Link } from "../../../components/ui/Link";
-import { Rating } from "../../../components/shared/Rating";
 import { Link as RouterLink } from "react-router";
 import { Swiper, SwiperSlide } from "swiper/react";
-
-import TShirt from "../../../assets/img/arrivals/t-shirt.png";
 import Jeans from "../../../assets/img/arrivals/jeans.png";
 import Shirt from "../../../assets/img/arrivals/shirt.png";
 import StrippedTShirt from "../../../assets/img/arrivals/stripped t-shirt.png";
+import TShirt from "../../../assets/img/arrivals/t-shirt.png";
+
+import { Rating } from "../../../components/shared/Rating";
+import { Link } from "../../../components/ui/Link";
+import { Title } from "../../../components/ui/Title";
+import { classNames } from "../../../utils/classNames";
 
 interface NewArrivalsProps {
   className?: string;
@@ -42,7 +42,7 @@ export const NewArrivals: React.FC<NewArrivalsProps> = ({ className }) => {
               },
             }}
           >
-            {NEW_ARRIVALS.map((item) => (
+            {NEW_ARRIVALS.map(item => (
               <SwiperSlide key={item.id}>
                 <RouterLink to={`/item/${item.id}`} className="h-[200px] w-[200px] xl:h-[300px] xl:w-[300px]">
                   <img
@@ -61,18 +61,18 @@ export const NewArrivals: React.FC<NewArrivalsProps> = ({ className }) => {
                   <div
                     className={classNames(
                       "text-xl xl:text-2xl font-bold",
-                      item.discount ? "opacity-40 line-through order-2" : ""
+                      item.discount ? "opacity-40 line-through order-2" : "",
                     )}
                   >
-                    {"$" + item.price}
+                    {`$${item.price}`}
                   </div>
                   {item.discount && (
                     <>
                       <div className="text-xl xl:text-2xl font-bold order-1">
-                        {"$" + (item.price * (1 - item.discount)).toFixed()}
+                        {`$${(item.price * (1 - item.discount)).toFixed()}`}
                       </div>
                       <div className="order-3 text-xs xl:text-sm font-medium text-red-500 px-2 py-1 bg-red-100 rounded-2xl">
-                        {"-" + (item.discount * 100).toFixed() + "%"}
+                        {`-${(item.discount * 100).toFixed()}%`}
                       </div>
                     </>
                   )}

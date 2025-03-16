@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { classNames } from "../../../utils/classNames";
-import { Modal } from "../Modal";
-
 import SearchSvg from "../../../assets/icons/search.svg";
+import { classNames } from "../../../utils/classNames";
+
+import { Modal } from "../Modal";
 import { SearchInput } from "./components/SearchInput";
 
 interface SearchProps {
@@ -19,7 +19,7 @@ export const Search: React.FC<SearchProps> = ({ className }) => {
     <>
       {/* Mobile */}
       <div className={classNames("flex items-center xl:hidden", className)}>
-        <button title="Open search modal" onClick={openModal} className="hover:opacity-60 transition-opacity">
+        <button type="button" title="Open search modal" onClick={openModal} className="hover:opacity-60 transition-opacity">
           <img src={SearchSvg} alt="Search Icon" className="w-6 h-6" />
         </button>
         <Modal isOpen={isModalOpen} onClose={closeModal} position="start">

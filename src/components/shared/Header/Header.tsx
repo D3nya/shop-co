@@ -1,8 +1,8 @@
 import React from "react";
-import { Navbar } from "../Navbar";
-import { Logo } from "../Logo";
-import { Search } from "../Search";
 import { Actions } from "../Actions";
+import { Logo } from "../Logo";
+import { Navbar } from "../Navbar";
+import { Search } from "../Search";
 
 export const Header: React.FC = () => {
   return (

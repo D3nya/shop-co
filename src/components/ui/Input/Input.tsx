@@ -1,8 +1,8 @@
-import React from "react";
 import type { Ref } from "react";
-import { classNames } from "../../../utils/classNames";
-
+import React from "react";
 import CrossSvg from "../../../assets/icons/x.svg";
+
+import { classNames } from "../../../utils/classNames";
 
 interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
   className?: string;
@@ -24,8 +24,8 @@ export const Input: React.FC<InputProps> = ({
   ref,
   ...props
 }) => {
-  const baseStyles =
-    "placeholder:opacity-60 placeholder:text-base py-3 rounded-3xl w-full focus:outline-none focus:ring-1";
+  const baseStyles
+    = "placeholder:opacity-60 placeholder:text-base py-3 rounded-3xl w-full focus:outline-none focus:ring-1";
 
   const variantStyles = {
     white: "bg-white",
@@ -43,7 +43,7 @@ export const Input: React.FC<InputProps> = ({
           onClear ? "pr-10" : "pr-4",
           icon ? "pl-12" : "pl-4",
           variantStyles[variant],
-          disabled ? "cursor-not-allowed" : ""
+          disabled ? "cursor-not-allowed" : "",
         )}
         {...props}
       />
@@ -56,6 +56,7 @@ export const Input: React.FC<InputProps> = ({
       )}
       {onClear && value && (
         <button
+          type="button"
           onClick={onClear}
           className="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-100 hover:opacity-60 transition-opacity"
         >

@@ -1,8 +1,8 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
-import useDebounce from "../../../../hooks/useDebounce";
-import { Input } from "../../../ui/Input";
-
 import SearchSvg from "../../../../assets/icons/search.svg";
+import useDebounce from "../../../../hooks/useDebounce";
+
+import { Input } from "../../../ui/Input";
 
 interface SearchInputProps {
   className?: string;
@@ -16,8 +16,7 @@ export const SearchInput: React.FC<SearchInputProps> = ({ className, placeholder
   const debouncedSearchValue = useDebounce(searchValue, 500);
 
   const handleSearch = useCallback(() => {
-    console.log(searchValue);
-  }, [searchValue]);
+  }, []);
 
   useEffect(() => {
     if (debouncedSearchValue) {

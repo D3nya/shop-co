@@ -1,7 +1,7 @@
 import React from "react";
-import { classNames } from "../../../utils/classNames";
-import { Title } from "../../../components/ui/Title";
 import { Link } from "react-router";
+import { Title } from "../../../components/ui/Title";
+import { classNames } from "../../../utils/classNames";
 
 interface DressStyleProps {
   className?: string;

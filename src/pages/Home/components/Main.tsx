@@ -1,9 +1,9 @@
 import React from "react";
-import { classNames } from "../../../utils/classNames";
-
 import StarSvg from "../../../assets/icons/star.svg";
-import { Title } from "../../../components/ui/Title";
+
 import { Link } from "../../../components/ui/Link";
+import { Title } from "../../../components/ui/Title";
+import { classNames } from "../../../utils/classNames";
 
 interface MainProps {
   className?: string;
@@ -15,7 +15,15 @@ export const Main: React.FC<MainProps> = ({ className }) => {
       <div className="container xl:flex xl:justify-between">
         <div className="max-w-[600px] pt-10 xl:pt-24 pb-8 xl:pb-[120px]">
           <Title position="left" type="h2">
-            Find clothes <br /> that matches <br /> your style
+            Find clothes
+            {" "}
+            <br />
+            {" "}
+            that matches
+            {" "}
+            <br />
+            {" "}
+            your style
           </Title>
           <p className="mt-5 xl:mt-8 text-sm/[20px] opacity-60">
             Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality

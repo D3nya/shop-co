@@ -16,7 +16,7 @@ export const Title: React.FC<TitleProps> = ({ className, type = "h1", children, 
       className={classNames(
         className,
         "uppercase font-bold font-integral text-4xl/[34px] xl:text-6xl/[64px]",
-        position === "center" ? "text-center" : "text-left"
+        position === "center" ? "text-center" : "text-left",
       )}
     >
       {children}

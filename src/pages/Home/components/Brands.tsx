@@ -1,11 +1,11 @@
 import React from "react";
-import { classNames } from "../../../utils/classNames";
+import CalvinSvg from "../../../assets/icons/brands/calvin.svg";
 
-import VersaceSvg from "../../../assets/icons/brands/versace.svg";
-import ZaraSvg from "../../../assets/icons/brands/zara.svg";
 import GucciSvg from "../../../assets/icons/brands/gucci.svg";
 import PradaSvg from "../../../assets/icons/brands/prada.svg";
-import CalvinSvg from "../../../assets/icons/brands/calvin.svg";
+import VersaceSvg from "../../../assets/icons/brands/versace.svg";
+import ZaraSvg from "../../../assets/icons/brands/zara.svg";
+import { classNames } from "../../../utils/classNames";
 
 interface BrandsProps {
   className?: string;

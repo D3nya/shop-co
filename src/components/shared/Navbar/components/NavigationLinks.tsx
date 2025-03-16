@@ -1,6 +1,6 @@
 import React from "react";
-import { classNames } from "../../../../utils/classNames";
 import { NavLink } from "react-router";
+import { classNames } from "../../../../utils/classNames";
 
 const routes = [
   { id: 1, to: "/shop", text: "Shop" },
@@ -17,7 +17,7 @@ interface NavigationLinksProps {
 export const NavigationLinks: React.FC<NavigationLinksProps> = ({ className, onClick }) => {
   return (
     <ul className={classNames(className)}>
-      {routes.map((route) => (
+      {routes.map(route => (
         <li key={route.id}>
           <NavLink
             to={route.to}
