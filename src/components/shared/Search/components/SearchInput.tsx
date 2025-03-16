@@ -1,8 +1,7 @@
 import React, { useCallback, useEffect, useRef, useState } from "react";
 import useDebounce from "../../../../hooks/useDebounce";
-import { classNames } from "../../../../utils/classNames";
+import { Input } from "../../../ui/Input";
 
-import CrossSvg from "../../../../assets/icons/x.svg";
 import SearchSvg from "../../../../assets/icons/search.svg";
 
 interface SearchInputProps {
@@ -11,60 +10,40 @@ interface SearchInputProps {
 }
 
 export const SearchInput: React.FC<SearchInputProps> = ({ className, placeholder }) => {
-  const [query, setQuery] = useState<string>("");
+  const [searchValue, setSearchValue] = useState<string>("");
   const inputRef = useRef<HTMLInputElement>(null);
 
-  const debouncedQuery = useDebounce(query, 500);
+  const debouncedSearchValue = useDebounce(searchValue, 500);
 
   const handleSearch = useCallback(() => {
-    console.log(query);
-  }, [query]);
+    console.log(searchValue);
+  }, [searchValue]);
 
   useEffect(() => {
-    if (debouncedQuery) {
+    if (debouncedSearchValue) {
       handleSearch();
     }
-  }, [debouncedQuery, handleSearch]);
+  }, [debouncedSearchValue, handleSearch]);
 
-  const clearInput = () => {
-    setQuery("");
+  const handleClear = () => {
+    setSearchValue("");
     inputRef.current?.focus();
   };
 
   const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    setQuery(event.target.value);
-  };
-
-  const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
-    if (event.key === "Enter") {
-      handleSearch();
-    }
+    setSearchValue(event.target.value);
   };
 
   return (
-    <div className={classNames(className, "relative")}>
-      <input
-        ref={inputRef}
-        type="text"
-        value={query}
-        onChange={handleInputChange}
-        onKeyDown={handleKeyDown}
-        placeholder={placeholder}
-        className="bg-accent-gray placeholder:opacity-60 placeholder:text-base py-3 pl-12 pr-10 rounded-3xl w-full focus:outline-none focus:ring-1"
-      />
-      <img
-        src={SearchSvg}
-        alt="Search Icon"
-        className="absolute top-1/2 left-4 transform -translate-y-1/2 w-6 h-6 opacity-60"
-      />
-      {query && (
-        <button
-          onClick={clearInput}
-          className="absolute right-4 top-1/2 transform -translate-y-1/2 opacity-100 hover:opacity-60 transition-opacity"
-        >
-          <img src={CrossSvg} alt="Cross Icon" className="w-4 h-4" />
-        </button>
-      )}
-    </div>
+    <Input
+      className={className}
+      ref={inputRef}
+      variant="accent"
+      icon={SearchSvg}
+      onClear={handleClear}
+      value={searchValue}
+      onChange={handleInputChange}
+      placeholder={placeholder}
+    />
   );
 };

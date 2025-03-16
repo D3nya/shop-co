@@ -1,8 +1,9 @@
 import React from "react";
 import { classNames } from "../../../utils/classNames";
-import { Link } from "react-router";
 
 import StarSvg from "../../../assets/icons/star.svg";
+import { Title } from "../../../components/ui/Title";
+import { Link } from "../../../components/ui/Link";
 
 interface MainProps {
   className?: string;
@@ -13,17 +14,14 @@ export const Main: React.FC<MainProps> = ({ className }) => {
     <section className={classNames("bg-accent-gray grow", className)}>
       <div className="container xl:flex xl:justify-between">
         <div className="max-w-[600px] pt-10 xl:pt-24 pb-8 xl:pb-[120px]">
-          <h2 className="uppercase font-bold font-integral text-4xl/[34px] xl:text-6xl/[64px]">
+          <Title position="left" type="h2">
             Find clothes <br /> that matches <br /> your style
-          </h2>
+          </Title>
           <p className="mt-5 xl:mt-8 text-sm/[20px] opacity-60">
             Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality
             and cater to your sense of style.
           </p>
-          <Link
-            to="/shop"
-            className="mt-6 xl:mt-8 block text-white bg-black text-center py-3 rounded-3xl text-base xl:max-w-[210px] hover:opacity-60 transition-opacity"
-          >
+          <Link to="/shop" className="mt-6 xl:mt-8 xl:max-w-[210px]" theme="black">
             Shop Now
           </Link>
           <div className="mt-4 xl:mt-12 flex flex-wrap items-center justify-center xl:justify-between gap-x-12 gap-y-3">
@@ -42,12 +40,14 @@ export const Main: React.FC<MainProps> = ({ className }) => {
           </div>
         </div>
 
-        <div className="bg-custom bg-cover bg-[center_top_1rem] xl:bg-[center_top_-5rem] xl:max-w-[700px] bg-no-repeat min-h-[450px] xl:grow">
-          <div className="flex justify-end xl:pt-[86px]">
-            <img src={StarSvg} alt="Star Icon" className="w-20 h-20 xl:w-26 xl:h-26" />
-          </div>
-          <div className="flex justify-start xl:pt-[86px]">
-            <img src={StarSvg} alt="Star Icon" className="w-10 h-10 xl:w-14 xl:h-14" />
+        <div className="bg-custom-main before:bg-no-repeat before:bg-[length:120%] xl:before:bg-[length:106%] before:bg-[position:-40px_-50px] xl:before:bg-[position:-30px_-50px] h-[448px] w-full xl:w-[600px] xl:h-[658px] before:-mx-[1rem] xl:before:mx-0 relative z-5 before:inset-0 before:absolute before:content-[''] xl:self-end">
+          <div className="pt-10 flex flex-col gap-5">
+            <div className="self-end">
+              <img src={StarSvg} alt="Star Icon" className="w-20 h-20 xl:w-26 xl:h-26 relative z-10" />
+            </div>
+            <div className="self-start">
+              <img src={StarSvg} alt="Star Icon" className="w-10 h-10 xl:w-14 xl:h-14 relative z-10" />
+            </div>
           </div>
         </div>
       </div>
