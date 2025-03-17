@@ -121,7 +121,7 @@ export const Reviews: React.FC<ReviewsProps> = ({ className }) => {
                   </div>
                   <div>{item.verified && <img src={OkSvg} alt="Ok Icon" className="h-5 w-5" />}</div>
                 </div>
-                <p className="mt-2 leading-[20px] text-sm xl:text-base opacity-60">
+                <p className="mt-2 leading-[20px] text-sm xl:text-base text-accent-light-gray">
                   {item.review.length > 170 ? `${item.review.slice(0, 167)}...` : item.review}
                 </p>
               </SwiperSlide>

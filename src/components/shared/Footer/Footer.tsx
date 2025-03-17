@@ -131,7 +131,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
               <RouterLink to="/" className="block">
                 <h2 className="font-integral font-bold text-3xl">Shop.co</h2>
               </RouterLink>
-              <p className="mt-3 text-sm opacity-60">
+              <p className="mt-3 text-sm text-accent-light-gray">
                 We have clothes that suits your style and which you're proud to wear. From women to men.
               </p>
               <div className="flex gap-x-3 mt-5">
@@ -171,7 +171,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
                       <li key={item.id} className="last:pb-0 pb-4">
                         <RouterLink
                           to={item.ref}
-                          className="opacity-60 text-sm leading-[16px] hover:opacity-100 transition-opacity"
+                          className="text-accent-light-gray text-sm leading-[16px] hover:text-black transition-colors"
                         >
                           {item.name}
                         </RouterLink>
@@ -186,7 +186,7 @@ export const Footer: React.FC<FooterProps> = ({ className }) => {
           <hr className="w-full opacity-10 mt-10" />
 
           <div className="xl:flex xl:justify-between">
-            <p className="text-sm opacity-60 text-center mt-4">Shop.co © 2000-2023, All Rights Reserved</p>
+            <p className="text-sm text-accent-light-gray text-center mt-4">Shop.co © 2000-2023, All Rights Reserved</p>
             <div className="flex gap-x-2.5 justify-center items-center mt-4 pb-20">
               <div className="w-[40px] h-[26px] bg-white rounded-md flex items-center justify-center">
                 <img src={VisaSvg} alt="Visa Icon" className="w-[27px] h-[9px]" />

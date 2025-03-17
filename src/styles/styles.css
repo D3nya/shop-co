@@ -2,9 +2,8 @@
   --font-satoshi: "Satoshi", "sans-serif";
   --font-integral: "Inregral CF", "sans-serif";
 
-  --text-tiny: 0.625rem;
-
   --color-accent-gray: #f0f0f0;
+  --color-accent-light-gray: rgba(0, 0, 0, 0.6);
 }
 
 @utility container {

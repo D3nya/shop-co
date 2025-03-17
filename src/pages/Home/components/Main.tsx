@@ -25,7 +25,7 @@ export const Main: React.FC<MainProps> = ({ className }) => {
             {" "}
             your style
           </Title>
-          <p className="mt-5 xl:mt-8 text-sm/[20px] opacity-60">
+          <p className="mt-5 xl:mt-8 text-sm/[20px] text-accent-light-gray">
             Browse through our diverse range of meticulously crafted garments, designed to bring out your individuality
             and cater to your sense of style.
           </p>
@@ -35,15 +35,15 @@ export const Main: React.FC<MainProps> = ({ className }) => {
           <div className="mt-4 xl:mt-12 flex flex-wrap items-center justify-center xl:justify-between gap-x-12 gap-y-3">
             <div className="relative after:content-[''] after:h-14 after:w-[2px] after:opacity-10 after:bg-black after:mt-2 after:absolute after:-right-6 xl:after:-right-12 after:top-0">
               <h3 className="font-bold text-4xl">200+</h3>
-              <p className="text-sm/[20px] opacity-60">International Brands</p>
+              <p className="text-sm/[20px] text-accent-light-gray">International Brands</p>
             </div>
             <div className="xl:relative xl:after:content-[''] xl:after:h-14 xl:after:w-[2px] xl:after:opacity-10 xl:after:bg-black xl:after:mt-2 xl:after:absolute xl:after:-right-12 xl:after:top-0">
               <h3 className="font-bold text-4xl">2,000+</h3>
-              <p className="text-sm/[20px] opacity-60">High-Quality Products</p>
+              <p className="text-sm/[20px] text-accent-light-gray">High-Quality Products</p>
             </div>
             <div>
               <h3 className="font-bold text-4xl">30,000+</h3>
-              <p className="text-sm/[20px] opacity-60">Happy Customers</p>
+              <p className="text-sm/[20px] text-accent-light-gray">Happy Customers</p>
             </div>
           </div>
         </div>
