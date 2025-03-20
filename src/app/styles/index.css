@@ -1,0 +1,5 @@
+@import "tailwindcss";
+@import "./normalize.css";
+@import "./fonts.css";
+@import "./styles.css";
+@import "swiper/css";

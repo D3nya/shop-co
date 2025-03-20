@@ -1,0 +1,51 @@
+@theme {
+  --font-satoshi: "Satoshi", "sans-serif";
+  --font-integral: "Inregral CF", "sans-serif";
+
+  --color-accent-gray: #f0f0f0;
+  --color-accent-light-gray: rgba(0, 0, 0, 0.6);
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1rem;
+}
+
+@layer base {
+  body {
+    @apply font-satoshi;
+  }
+}
+
+.bg-custom-main::before {
+  background-image: url("@/shared/assets/img/preview.png");
+}
+
+.bg-custom-dress-casual::before {
+  background-image: url("@/shared/assets/img/styles/casual.png");
+  background-size: 185%;
+  background-position: 30% 40%;
+  background-repeat: no-repeat;
+  transform: scaleX(-1);
+}
+
+.bg-custom-dress-formal::before {
+  background-image: url("@/shared/assets/img/styles/formal.png");
+  background-size: 185%;
+  background-position: -15% 35%;
+  background-repeat: no-repeat;
+}
+
+.bg-custom-dress-party::before {
+  background-image: url("@/shared/assets/img/styles/party.png");
+  background-size: 130%;
+  background-position: 5% 45%;
+  background-repeat: no-repeat;
+}
+
+.bg-custom-dress-gym::before {
+  background-image: url("@/shared/assets/img/styles/gym.png");
+  background-size: 110%;
+  background-position: -120% 35%;
+  background-repeat: no-repeat;
+}
