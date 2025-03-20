@@ -1,7 +1,6 @@
 import type { Swiper as SwiperType } from "swiper";
+import { Review } from "@/entities/review";
 import ArrowSvg from "@/shared/assets/icons/arrow.svg";
-import OkSvg from "@/shared/assets/icons/ok.svg";
-import { Rating } from "@/shared/ui/Rating";
 import { Title } from "@/shared/ui/Title";
 import { classNames } from "@/shared/utils/classNames";
 import React, { useRef } from "react";
@@ -43,21 +42,12 @@ export const ReviewsBlock: React.FC<ReviewsBlockProps> = ({ className }) => {
               },
             }}
           >
-            {REVIEWS.map(item => (
+            {REVIEWS.map(review => (
               <SwiperSlide
-                key={item.id}
+                key={review.id}
                 className="p-6 mt-6 border border-black/10 rounded-xl h-[190px]! xl:h-[240px]! [&:not(.swiper-slide-visible)]:blur-[2px]"
               >
-                <Rating rating={item.rating} total={false} />
-                <div className="mt-3 flex items-center justify-start  gap-x-1">
-                  <div className="font-bold text-base xl:text-xl leading-1.5">
-                    {`${item.firstName} ${item.lastName.slice(0, 1).toUpperCase()}.`}
-                  </div>
-                  <div>{item.verified && <img src={OkSvg} alt="Ok Icon" className="h-5 w-5" />}</div>
-                </div>
-                <p className="mt-2 leading-[20px] text-sm xl:text-base text-accent-light-gray">
-                  {item.review.length > 170 ? `${item.review.slice(0, 167)}...` : item.review}
-                </p>
+                <Review review={review} />
               </SwiperSlide>
             ))}
           </Swiper>
