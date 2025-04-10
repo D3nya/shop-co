@@ -7,10 +7,11 @@ import { Link } from "react-router";
 
 interface ProductCardProps {
   className?: string;
+  slider?: boolean;
   item: Product;
 }
 
-export const ProductCard: React.FC<ProductCardProps> = memo(({ className, item: { id, price, rating, title, discount = 0, img = ProductDefalutImg } }) => {
+export const ProductCard: React.FC<ProductCardProps> = memo(({ className, slider = false, item: { id, price, rating, title, discount = 0, img = ProductDefalutImg } }) => {
   const hasDiscount = useMemo(() => discount > 0, [discount]);
 
   const getDiscountedPrice = (price: number, discount: number) => (price * (1 - discount)).toFixed();
@@ -18,15 +19,15 @@ export const ProductCard: React.FC<ProductCardProps> = memo(({ className, item: 
 
   return (
     <div className={className}>
-      <Link to={`/item/${id}`} className="block h-[200px] w-[200px] xl:h-[300px] xl:w-[300px] bg-accent-gray rounded-2xl">
+      <Link to={`/item/${id}`} className={classNames(className, "block xl:h-[300px] xl:w-[300px] bg-accent-gray rounded-2xl", slider && "h-[200px] w-[200px]")}>
         <img
           src={img}
           alt={`${title} Image`}
-          className="h-full w-full rounded-2xl"
+          className="h-full w-full rounded-2xl aspect-square"
         />
       </Link>
 
-      <Link to={`/item/${id}`} className="block font-bold mt-2 xl:mt-4 xl:text-xl">
+      <Link to={`/item/${id}`} className="block font-bold mt-2 xl:mt-4 xl:text-xl truncate">
         {title}
       </Link>
 

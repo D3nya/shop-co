@@ -1,9 +1,9 @@
 import { ProductSlider } from "@/entities/product";
+import { SHOP_ITEMS } from "@/shared/config/consts/shopItems";
 import { Link } from "@/shared/ui/Link";
 import { Title } from "@/shared/ui/Title";
 import { classNames } from "@/shared/utils/classNames";
 import React from "react";
-import { TOP_SELLING } from "../model/sellingConstants";
 
 interface SellingBlockProps {
   className?: string;
@@ -18,7 +18,7 @@ export const SellingBlock: React.FC<SellingBlockProps> = ({ className }) => {
         </Title>
 
         <div className="-mr-[1rem] xl:mr-0 mt-8 xl:mt-14">
-          <ProductSlider products={TOP_SELLING} />
+          <ProductSlider products={SHOP_ITEMS} />
         </div>
 
         <Link to="/on-sale" className="xl:max-w-[210px] mt-6 xl:mt-9 xl:mx-auto" theme="white">

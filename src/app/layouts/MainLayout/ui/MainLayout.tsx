@@ -1,9 +1,9 @@
 import { AutoScrollToTop } from "@/shared/ui/AutoScrollToTop";
 import { ErrorBoundary } from "@/shared/ui/ErrorBoundary";
-import { Loader } from "@/shared/ui/Loader/ui/Loader";
 import { ErrorBlock } from "@/widgets/ErrorBlock";
 import { Footer } from "@/widgets/Footer";
 import { Header } from "@/widgets/Header";
+import { LoaderBlock } from "@/widgets/LoaderBlock";
 import React, { Suspense } from "react";
 import { Outlet } from "react-router";
 
@@ -14,7 +14,7 @@ export const MainLayout: React.FC = () => {
         <Header />
         <main className="flex-grow">
           <ErrorBoundary fallback={<ErrorBlock />}>
-            <Suspense fallback={<div className="flex justify-center items-center"><Loader className="w-full h-full block" /></div>}>
+            <Suspense fallback={<LoaderBlock />}>
               <Outlet />
             </Suspense>
           </ErrorBoundary>
